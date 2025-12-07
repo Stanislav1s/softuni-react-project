@@ -1,0 +1,26 @@
+body {
+    background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=60') center/cover no-repeat;
+    backdrop-filter: blur(4px);
+}
+
+.login-wrapper {
+    padding: 100px 15px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,12 @@
+body {
+    background: #f8f9fa;
+}
+
+.recipe-img {
+    height: 450px;
+    object-fit: cover;
+}
+
+.navbar-brand span {
+    color: #ff6b35;
+}
