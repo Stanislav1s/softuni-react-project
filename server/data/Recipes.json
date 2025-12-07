@@ -1,0 +1,275 @@
+[
+    {
+        "_id": "d3b07384-d9b1-4f2a-9b2a-1a2e4f6c8f01",
+        "title": "Spaghetti Bolognese",
+        "description": "Classic Italian pasta with a rich, slow-simmered beef and tomato sauce.",
+        "cooking_time": 60,
+        "servings": 4,
+        "calories": 680,
+        "imgUrl": "https://example.com/images/spaghetti-bolognese.jpg",
+        "ingredients": [
+            "400g spaghetti",
+            "400g ground beef",
+            "1 onion, finely chopped",
+            "2 cloves garlic, minced",
+            "400g canned crushed tomatoes",
+            "2 tbsp tomato paste",
+            "100ml red wine (optional)",
+            "1 carrot, grated",
+            "2 tbsp olive oil",
+            "Salt",
+            "Pepper",
+            "Fresh basil"
+        ],
+        "protein": 32,
+        "carbs": 78,
+        "fats": 22,
+        "step_by_step_guide": {
+            "step1": {
+                "title": "Prepare ingredients",
+                "description": "Chop the onion and garlic, grate the carrot, and open the canned tomatoes."
+            },
+            "step2": {
+                "title": "Sauté vegetables",
+                "description": "Heat olive oil in a large pan, add onion and garlic and cook until translucent. Add grated carrot and cook 2–3 minutes."
+            },
+            "step3": {
+                "title": "Brown the beef",
+                "description": "Add ground beef and cook until browned, breaking it up with a spoon."
+            },
+            "step4": {
+                "title": "Add tomatoes and simmer",
+                "description": "Stir in tomato paste, crushed tomatoes and red wine (if using). Season with salt and pepper. Reduce heat and simmer 30–35 minutes."
+            },
+            "step5": {
+                "title": "Cook spaghetti",
+                "description": "Cook spaghetti in salted boiling water according to package instructions until al dente. Drain."
+            },
+            "step6": {
+                "title": "Serve",
+                "description": "Combine sauce with spaghetti or spoon sauce over pasta. Garnish with fresh basil."
+            }
+        }
+    },
+    {
+        "_id": "a1f5c2b7-6f9d-4c1b-8e2b-3b7a9e5c2d34",
+        "title": "Chicken Stir-Fry with Vegetables",
+        "description": "Quick pan-stirred chicken with colorful vegetables and a savory sauce—perfect for weeknights.",
+        "cooking_time": 25,
+        "servings": 3,
+        "calories": 420,
+        "imgUrl": "https://example.com/images/chicken-stirfry.jpg",
+        "ingredients": [
+            "400g chicken breast, sliced thin",
+            "1 red bell pepper, sliced",
+            "1 yellow bell pepper, sliced",
+            "1 broccoli head, cut into florets",
+            "2 tbsp soy sauce",
+            "1 tbsp oyster sauce",
+            "1 tbsp sesame oil",
+            "2 cloves garlic, minced",
+            "1 inch ginger, grated",
+            "2 tbsp vegetable oil",
+            "Salt",
+            "Black pepper",
+            "Cooked rice to serve"
+        ],
+        "protein": 38,
+        "carbs": 28,
+        "fats": 14,
+        "step_by_step_guide": {
+            "step1": {
+                "title": "Make the sauce",
+                "description": "Whisk together soy sauce, oyster sauce, and sesame oil. Set aside."
+            },
+            "step2": {
+                "title": "Prep and heat pan",
+                "description": "Heat vegetable oil in a wok or large skillet over high heat."
+            },
+            "step3": {
+                "title": "Cook chicken",
+                "description": "Add chicken slices and stir-fry until cooked through, about 4–5 minutes. Remove and set aside."
+            },
+            "step4": {
+                "title": "Stir-fry vegetables",
+                "description": "Add garlic and ginger, then add peppers and broccoli. Stir-fry 3–4 minutes until crisp-tender."
+            },
+            "step5": {
+                "title": "Combine and finish",
+                "description": "Return chicken to the pan, add sauce, toss everything until coated and heated through. Serve over rice."
+            }
+        }
+    },
+    {
+        "_id": "5c9fa8e2-2a11-4dbd-8b9e-7f6a3c4d5e67",
+        "title": "Vegan Buddha Bowl",
+        "description": "Nourishing bowl with quinoa, roasted chickpeas, roasted vegetables and a tahini lemon dressing.",
+        "cooking_time": 40,
+        "servings": 2,
+        "calories": 550,
+        "imgUrl": "https://example.com/images/buddha-bowl.jpg",
+        "ingredients": [
+            "1 cup quinoa",
+            "1 can (400g) chickpeas, drained and rinsed",
+            "1 sweet potato, cubed",
+            "1 zucchini, sliced",
+            "2 cups mixed greens",
+            "1 avocado, sliced",
+            "2 tbsp olive oil",
+            "1 tsp smoked paprika",
+            "Salt",
+            "Pepper",
+            "Tahini",
+            "1 lemon"
+        ],
+        "protein": 18,
+        "carbs": 68,
+        "fats": 22,
+        "step_by_step_guide": {
+            "step1": {
+                "title": "Cook quinoa",
+                "description": "Rinse quinoa and cook according to package instructions. Fluff and set aside."
+            },
+            "step2": {
+                "title": "Roast chickpeas and veggies",
+                "description": "Toss chickpeas and sweet potato cubes with olive oil, smoked paprika, salt and pepper. Roast with zucchini at 200°C (400°F) for 20–25 minutes until tender and crisp."
+            },
+            "step3": {
+                "title": "Make dressing",
+                "description": "Whisk 3 tbsp tahini with juice of half a lemon, a little water to thin, salt and pepper."
+            },
+            "step4": {
+                "title": "Assemble bowl",
+                "description": "Layer quinoa, mixed greens, roasted vegetables, chickpeas and avocado. Drizzle with tahini dressing."
+            }
+        }
+    },
+    {
+        "_id": "9e2b1c4a-7a6f-4b2c-8c3d-0f1a2b3c4d55",
+        "title": "Fluffy Buttermilk Pancakes",
+        "description": "Light and tender pancakes made with buttermilk—great for weekend breakfasts.",
+        "cooking_time": 20,
+        "servings": 4,
+        "calories": 320,
+        "imgUrl": "https://example.com/images/pancakes.jpg",
+        "ingredients": [
+            "2 cups all-purpose flour",
+            "2 tbsp sugar",
+            "2 tsp baking powder",
+            "1 tsp baking soda",
+            "1/2 tsp salt",
+            "2 cups buttermilk",
+            "2 eggs",
+            "4 tbsp melted butter",
+            "Vegetable oil or extra butter for cooking",
+            "Maple syrup to serve"
+        ],
+        "protein": 8,
+        "carbs": 45,
+        "fats": 12,
+        "step_by_step_guide": {
+            "step1": {
+                "title": "Mix dry ingredients",
+                "description": "In a bowl, whisk flour, sugar, baking powder, baking soda and salt."
+            },
+            "step2": {
+                "title": "Combine wet ingredients",
+                "description": "In another bowl, whisk buttermilk, eggs and melted butter until combined."
+            },
+            "step3": {
+                "title": "Make batter",
+                "description": "Pour wet into dry and stir until just combined; small lumps are fine. Let rest 5 minutes."
+            },
+            "step4": {
+                "title": "Cook pancakes",
+                "description": "Heat a nonstick pan over medium heat, grease lightly. Pour 1/4 cup batter per pancake. Cook until bubbles form, flip and cook until golden."
+            },
+            "step5": {
+                "title": "Serve",
+                "description": "Serve warm with butter and maple syrup."
+            }
+        }
+    },
+    {
+        "_id": "f4a7b8c9-1d2e-4f3a-9b0c-6a7d8e9f0b12",
+        "title": "Pan-Seared Salmon with Lemon Asparagus",
+        "description": "Crispy-skinned salmon fillets served with quickly sautéed asparagus and a lemon butter sauce.",
+        "cooking_time": 20,
+        "servings": 2,
+        "calories": 510,
+        "imgUrl": "https://example.com/images/salmon-asparagus.jpg",
+        "ingredients": [
+            "2 salmon fillets (about 150–180g each)",
+            "250g asparagus, trimmed",
+            "2 tbsp butter",
+            "1 tbsp olive oil",
+            "1 lemon",
+            "Salt",
+            "Black pepper",
+            "Fresh parsley (optional)"
+        ],
+        "protein": 34,
+        "carbs": 8,
+        "fats": 36,
+        "step_by_step_guide": {
+            "step1": {
+                "title": "Prepare salmon",
+                "description": "Pat salmon dry, season both sides with salt and pepper. Score skin lightly if needed."
+            },
+            "step2": {
+                "title": "Sear salmon",
+                "description": "Heat olive oil in a skillet over medium-high heat. Place salmon skin-side down and cook 4–5 minutes until skin is crisp. Flip and cook 2–3 minutes until done to preference. Remove and keep warm."
+            },
+            "step3": {
+                "title": "Cook asparagus",
+                "description": "In same pan, add butter and asparagus. Sauté 3–4 minutes until tender-crisp. Squeeze lemon over asparagus."
+            },
+            "step4": {
+                "title": "Finish and serve",
+                "description": "Plate salmon with asparagus, spoon lemon-butter from the pan over fish, and garnish with parsley."
+            }
+        }
+    },
+    {
+        "_id": "2b8e6d4f-3c1a-45b7-9a2f-8d7c6b5a4e33",
+        "title": "Classic Greek Salad",
+        "description": "Fresh, crunchy salad with tomatoes, cucumber, red onion, olives and feta — great as a side or light meal.",
+        "cooking_time": 10,
+        "servings": 3,
+        "calories": 220,
+        "imgUrl": "https://example.com/images/greek-salad.jpg",
+        "ingredients": [
+            "3 tomatoes, chopped",
+            "1 cucumber, sliced",
+            "1/2 red onion, thinly sliced",
+            "100g feta cheese, cubed",
+            "Handful of Kalamata olives",
+            "2 tbsp olive oil",
+            "1 tbsp red wine vinegar",
+            "1 tsp dried oregano",
+            "Salt",
+            "Black pepper"
+        ],
+        "protein": 6,
+        "carbs": 10,
+        "fats": 18,
+        "step_by_step_guide": {
+            "step1": {
+                "title": "Chop vegetables",
+                "description": "Prepare tomatoes, cucumber and red onion and place in a large bowl."
+            },
+            "step2": {
+                "title": "Add feta and olives",
+                "description": "Add cubed feta and Kalamata olives to the bowl."
+            },
+            "step3": {
+                "title": "Dress salad",
+                "description": "Whisk olive oil, red wine vinegar, oregano, salt and pepper. Pour over salad and toss gently."
+            },
+            "step4": {
+                "title": "Serve",
+                "description": "Serve immediately as a side or with crusty bread for a light meal."
+            }
+        }
+    }
+]
