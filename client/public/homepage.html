@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Home</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Optional Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+
+        .recipe-img {
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .navbar-brand span {
+            color: #ff6b35;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                My<span>Recipes</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Recipes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / CAROUSEL -->
+    <div id="recipeCarousel" class="carousel slide mt-4 container" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#recipeCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#recipeCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#recipeCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner rounded shadow">
+
+            <!-- RECIPE 1 -->
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" class="d-block w-100 recipe-img"
+                    alt="Recipe 1">
+                <div class="carousel-caption bg-dark bg-opacity-50 p-3 rounded">
+                    <h3>Italian Pasta Carbonara</h3>
+                    <p>Creamy, hearty, and ready in 20 minutes!</p>
+                </div>
+            </div>
+
+            <!-- RECIPE 2 -->
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" class="d-block w-100 recipe-img"
+                    alt="Recipe 2">
+                <div class="carousel-caption bg-dark bg-opacity-50 p-3 rounded">
+                    <h3>Homemade Burger Deluxe</h3>
+                    <p>Juicy beef, fresh veggies, toasted buns.</p>
+                </div>
+            </div>
+
+            <!-- RECIPE 3 -->
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" class="d-block w-100 recipe-img"
+                    alt="Recipe 3">
+                <div class="carousel-caption bg-dark bg-opacity-50 p-3 rounded">
+                    <h3>Chocolate Lava Cake</h3>
+                    <p>Warm, gooey, and indulgent dessert.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#recipeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#recipeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center mt-5 py-4 bg-white shadow-sm">
+        <p class="mb-0">© 2025 MyRecipes. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .hero-header {
+            background: url('https://images.unsplash.com/photo-1514511013761-9f8e8a4bd253?auto=format&fit=crop&w=1400&q=60') center/cover no-repeat;
+            padding: 120px 0;
+            color: white;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-section {
+            padding: 60px 0;
+        }
+
+        .form-control,
+        .form-select {
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 px-4">
+        <a class="navbar-brand fw-bold fs-2 text-primary" href="#">
+            F<span class="text-secondary">oo</span>dy
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto fw-semibold">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="catalog.html">Recipes</a></li>
+                <li class="nav-item"><a class="nav-link active" href="create-recipe.html">Create Recipe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <div class="hero-header text-center">
+        <h1 class="fw-bold display-4">Create a New Recipe</h1>
+        <p class="lead">Add ingredients, nutrition, and detailed steps</p>
+    </div>
+
+    <!-- Create Recipe Form -->
+    <section class="container form-section">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-body p-5">
+
+                        <h2 class="fw-bold mb-4 text-center">Recipe Information</h2>
+
+                        <form>
+
+                            <!-- Title & Category -->
+                            <div class="row">
+                                <div class="col-md-8 mb-4">
+                                    <label class="form-label fw-semibold">Recipe Title</label>
+                                    <input type="text" class="form-control" placeholder="e.g. Spaghetti Carbonara"
+                                        required>
+                                </div>
+
+                                <div class="col-md-4 mb-4">
+                                    <label class="form-label fw-semibold">Category</label>
+                                    <select class="form-select">
+                                        <option>Breakfast</option>
+                                        <option>Lunch</option>
+                                        <option>Dinner</option>
+                                        <option>Dessert</option>
+                                        <option>Drinks</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Image URL -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Image URL</label>
+                                <input type="text" class="form-control" placeholder="Paste an image URL..." required>
+                            </div>
+
+                            <!-- Cooking Time, Servings, Difficulty -->
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <label class="form-label fw-semibold">Cooking Time (minutes)</label>
+                                    <input type="number" class="form-control" placeholder="e.g. 30">
+                                </div>
+
+                                <div class="col-md-4 mb-4">
+                                    <label class="form-label fw-semibold">Servings</label>
+                                    <input type="number" class="form-control" placeholder="e.g. 4">
+                                </div>
+
+                                <div class="col-md-4 mb-4">
+                                    <label class="form-label fw-semibold">Difficulty</label>
+                                    <select class="form-select">
+                                        <option>Easy</option>
+                                        <option>Medium</option>
+                                        <option>Hard</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Short Description</label>
+                                <textarea class="form-control" rows="3" placeholder="A short intro to the recipe..."
+                                    required></textarea>
+                            </div>
+
+                            <!-- Ingredients -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Ingredients (one per line)</label>
+                                <textarea class="form-control" rows="5"
+                                    placeholder="e.g. 200g pasta&#10;100g bacon&#10;2 eggs"></textarea>
+                            </div>
+
+                            <!-- Nutrition Facts -->
+                            <h4 class="fw-bold mt-4 mb-3">Nutrition Facts</h4>
+                            <div class="row">
+
+                                <div class="col-md-3 mb-4">
+                                    <label class="form-label fw-semibold">Calories</label>
+                                    <input type="number" class="form-control" placeholder="e.g. 450">
+                                </div>
+
+                                <div class="col-md-3 mb-4">
+                                    <label class="form-label fw-semibold">Protein (g)</label>
+                                    <input type="number" class="form-control" placeholder="e.g. 18">
+                                </div>
+
+                                <div class="col-md-3 mb-4">
+                                    <label class="form-label fw-semibold">Carbs (g)</label>
+                                    <input type="number" class="form-control" placeholder="e.g. 50">
+                                </div>
+
+                                <div class="col-md-3 mb-4">
+                                    <label class="form-label fw-semibold">Fat (g)</label>
+                                    <input type="number" class="form-control" placeholder="e.g. 15">
+                                </div>
+
+                            </div>
+
+                            <!-- Instructions -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Instructions (steps)</label>
+                                <textarea class="form-control" rows="7" placeholder="Step-by-step instructions..."
+                                    required></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center mt-4">
+                                <button class="btn btn-primary px-5 py-2">Create Recipe</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
