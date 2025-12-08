@@ -8,6 +8,7 @@ import Login from './components/login/login.jsx'
 import Details from './components/details/details.jsx'
 import Favourites from './components/favourites/Favourites.jsx'
 import Edit from './components/edit/edit.jsx'
+import Logout from './components/logout/Logout.jsx'
 function App() {
   const [registeredUsers, setRegisteredUsers] = useState([])
   const [user, setUser] = useState(null)
@@ -30,6 +31,10 @@ function App() {
     }
     setUser(user)
   }
+  const logoutHandler = () => {
+    setUser(null)
+  }
+
   return (
     <>
       <Header user={user} />
@@ -38,6 +43,7 @@ function App() {
         <Route path='/catalog' element={<Catalog />} />
         <Route path='/register' element={<Register onRegister={registerHandler} />} />
         <Route path='/login' element={<Login onLogin={loginHandler} />} />
+        <Route path='/logout' element={<Logout onLogout={logoutHandler} />} />
         <Route path='/:id/details' element={<Details />} />
         <Route path='/favourites' element={<Favourites />} />
         <Route path='/:id/edit' element={<Edit />} />

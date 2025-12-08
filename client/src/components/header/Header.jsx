@@ -44,9 +44,9 @@ export default function Header() {
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
-                                Contact
-                            </a>
+                            <Link className="nav-link" to="/logout">
+                                Logout
+                            </Link>
                         </li>
                     </ul>
                 </div>
