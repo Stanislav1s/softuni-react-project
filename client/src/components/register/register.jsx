@@ -1,5 +1,24 @@
+
 import './register.css'
-export default function Register() {
+export default function Register({ user, onRegister }
+
+) {
+
+    const registerSubmit = (formData) => {
+        const fullName = formData.get('fullName')
+        const email = formData.get('email')
+        const password = formData.get('password')
+        const confirmPass = formData.get('confirmPass')
+
+        if (!email || !password) {
+            alert('Email and password are required!')
+        }
+        if (password !== confirmPass) {
+            alert('password missmatch')
+        }
+        onRegister(email)
+
+    }
     return (<>
         <div className="container register-wrapper">
             <div className="row justify-content-center">
@@ -9,7 +28,7 @@ export default function Register() {
                         <p className="text-center mb-4 text-muted">
                             Join Foody and share your recipes
                         </p>
-                        <form>
+                        <form action={registerSubmit}>
                             {/* Name */}
                             <div className="mb-4">
                                 <label className="form-label fw-semibold">Full Name</label>
@@ -18,6 +37,7 @@ export default function Register() {
                                     className="form-control"
                                     placeholder="John Doe"
                                     required=""
+                                    name='fullName'
                                 />
                             </div>
                             {/* Email */}
@@ -28,6 +48,8 @@ export default function Register() {
                                     className="form-control"
                                     placeholder="example@mail.com"
                                     required=""
+                                    name='email'
+
                                 />
                             </div>
                             {/* Password */}
@@ -38,6 +60,7 @@ export default function Register() {
                                     className="form-control"
                                     placeholder="Create password"
                                     required=""
+                                    name='password'
                                 />
                             </div>
                             {/* Confirm Password */}
@@ -48,23 +71,11 @@ export default function Register() {
                                     className="form-control"
                                     placeholder="Repeat password"
                                     required=""
+                                    name='confirmPass'
                                 />
                             </div>
-                            {/* Terms */}
-                            <div className="form-check mb-4">
-                                <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    id="terms"
-                                    required=""
-                                />
-                                <label className="form-check-label" htmlFor="terms">
-                                    I agree to the{" "}
-                                    <a href="#" className="text-primary">
-                                        Terms &amp; Conditions
-                                    </a>
-                                </label>
-                            </div>
+
+
                             {/* Register Button */}
                             <div className="d-grid mt-4">
                                 <button className="btn btn-primary">Create Account</button>
