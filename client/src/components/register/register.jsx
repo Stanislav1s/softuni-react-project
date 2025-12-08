@@ -1,11 +1,11 @@
 
+import { useNavigate } from 'react-router'
 import './register.css'
-export default function Register({ user, onRegister }
-
+export default function Register({ onRegister }
 ) {
-
+    const navigate = useNavigate()
     const registerSubmit = (formData) => {
-        const fullName = formData.get('fullName')
+
         const email = formData.get('email')
         const password = formData.get('password')
         const confirmPass = formData.get('confirmPass')
@@ -16,8 +16,13 @@ export default function Register({ user, onRegister }
         if (password !== confirmPass) {
             alert('password missmatch')
         }
-        onRegister(email)
-
+        try {
+            onRegister(email, password)
+            navigate('/')
+        }
+        catch (err) {
+            alert(err.message)
+        }
     }
     return (<>
         <div className="container register-wrapper">
@@ -29,17 +34,6 @@ export default function Register({ user, onRegister }
                             Join Foody and share your recipes
                         </p>
                         <form action={registerSubmit}>
-                            {/* Name */}
-                            <div className="mb-4">
-                                <label className="form-label fw-semibold">Full Name</label>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="John Doe"
-                                    required=""
-                                    name='fullName'
-                                />
-                            </div>
                             {/* Email */}
                             <div className="mb-4">
                                 <label className="form-label fw-semibold">Email Address</label>

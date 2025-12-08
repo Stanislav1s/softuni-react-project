@@ -1,6 +1,26 @@
+import { useNavigate } from "react-router"
 import "./login.css"
-export default function Login() {
+export default function Login({
+    onLogin
+}) {
+    const navigate = useNavigate()
+    const submitAction = (formData) => {
+        const email = formData.get('email')
+        const password = formData.get('password')
 
+        if (!email || !password) {
+            alert('Email and password is required!')
+        }
+
+        try {
+            onLogin(email, password)
+            navigate('/')
+        }
+        catch (err) {
+            alert(err.message)
+        }
+
+    }
     return (<>
         <div className="container login-wrapper">
             <div className="row justify-content-center">
@@ -10,7 +30,7 @@ export default function Login() {
                         <p className="text-center mb-4 text-muted">
                             Login to your Foody account
                         </p>
-                        <form>
+                        <form action={submitAction}>
                             {/* Email */}
                             <div className="mb-4">
                                 <label className="form-label fw-semibold">Email Address</label>
@@ -19,6 +39,7 @@ export default function Login() {
                                     className="form-control"
                                     placeholder="example@mail.com"
                                     required=""
+                                    name="email"
                                 />
                             </div>
                             {/* Password */}
@@ -29,6 +50,7 @@ export default function Login() {
                                     className="form-control"
                                     placeholder="Enter your password"
                                     required=""
+                                    name="password"
                                 />
                             </div>
                             {/* Login Button */}
@@ -44,9 +66,6 @@ export default function Login() {
                                     Register here
                                 </a>
                             </p>
-                            <a href="#" className="text-secondary small">
-                                Forgot password?
-                            </a>
                         </div>
                     </div>
                 </div>
