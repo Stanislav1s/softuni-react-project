@@ -1,87 +1,39 @@
-import "./Home.css"
+import { useEffect, useState } from "react";
+import "./Home.css";
+import Carousel from "../carousel/Carousel.jsx";
+
 export default function Home() {
 
-    return (<>
-        <div>
-            <div
-                id="recipeCarousel"
-                className="carousel slide mt-4 container"
-                data-bs-ride="carousel"
-            >
-                <div className="carousel-indicators">
-                    <button
-                        type="button"
-                        data-bs-target="#recipeCarousel"
-                        data-bs-slide-to={0}
-                        className="active"
-                    />
-                    <button
-                        type="button"
-                        data-bs-target="#recipeCarousel"
-                        data-bs-slide-to={1}
-                    />
-                    <button
-                        type="button"
-                        data-bs-target="#recipeCarousel"
-                        data-bs-slide-to={2}
-                    />
-                </div>
-                <div className="carousel-inner rounded shadow">
-                    {/* RECIPE 1 */}
-                    <div className="carousel-item active">
-                        <img
-                            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
-                            className="d-block w-100 recipe-img"
-                            alt="Recipe 1"
-                        />
-                        <div className="carousel-caption bg-dark bg-opacity-50 p-3 rounded">
-                            <h3>Italian Pasta Carbonara</h3>
-                            <p>Creamy, hearty, and ready in 20 minutes!</p>
-                        </div>
-                    </div>
-                    {/* RECIPE 2 */}
-                    <div className="carousel-item">
-                        <img
-                            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061"
-                            className="d-block w-100 recipe-img"
-                            alt="Recipe 2"
-                        />
-                        <div className="carousel-caption bg-dark bg-opacity-50 p-3 rounded">
-                            <h3>Homemade Burger Deluxe</h3>
-                            <p>Juicy beef, fresh veggies, toasted buns.</p>
-                        </div>
-                    </div>
-                    {/* RECIPE 3 */}
-                    <div className="carousel-item">
-                        <img
-                            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
-                            className="d-block w-100 recipe-img"
-                            alt="Recipe 3"
-                        />
-                        <div className="carousel-caption bg-dark bg-opacity-50 p-3 rounded">
-                            <h3>Chocolate Lava Cake</h3>
-                            <p>Warm, gooey, and indulgent dessert.</p>
-                        </div>
-                    </div>
-                </div>
-                <button
-                    className="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#recipeCarousel"
-                    data-bs-slide="prev"
-                >
-                    <span className="carousel-control-prev-icon" />
-                </button>
-                <button
-                    className="carousel-control-next"
-                    type="button"
-                    data-bs-target="#recipeCarousel"
-                    data-bs-slide="next"
-                >
-                    <span className="carousel-control-next-icon" />
-                </button>
-            </div>
-        </div>
-    </>
-    )
+    const [latestRecipes, setLatestRecipes] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:3030/jsonstore/Recipes")
+            .then(response => response.json())
+            .then(result => {
+
+                const sortedLatest = Object.values(result)
+                    .sort((a, b) => new Date(b._createdAt) - new Date(a._createdAt))
+                    .slice(0, 3);
+
+                setLatestRecipes(sortedLatest);
+            });
+    }, []);
+
+    return (
+        <>
+            <header className="text-center my-5">
+                <h1 className="fw-bold mb-3">
+                    Welcome to My<span className="foody-orange">Foody</span>
+                </h1>
+                <h4 className="text-muted">
+                    A recipe sharing platform
+                </h4>
+
+                <p className="text-secondary fs-5 mt-4">
+                    Check out our latest recipes...
+                </p>
+            </header>
+            <Carousel id="resultRecipes" items={latestRecipes} />
+        </>
+    );
 }

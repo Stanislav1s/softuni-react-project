@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function RecipeCard({
     _id,
     title,
@@ -19,12 +21,12 @@ export default function RecipeCard({
                         <p className="card-text text-muted">
                             {description1}
                         </p>
-                        <a href="#" className="btn btn-primary w-100">
+                        <Link to={`/${_id}/details`} className="btn btn-primary w-100">
                             View Recipe
-                        </a>
+                        </Link>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

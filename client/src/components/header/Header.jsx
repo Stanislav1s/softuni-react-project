@@ -5,7 +5,7 @@ export default function Header() {
         <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
             <div className="container">
                 <Link className="navbar-brand fw-bold" to="/">
-                    My<span>Recipes</span>
+                    My<span>Foody</span>
                 </Link>
 
                 <button

@@ -7,6 +7,7 @@
         "servings": 4,
         "calories": 680,
         "imgUrl": "./images/eggplant-bolognese.jpg",
+        "createdAt": "2025-05-11T14:10:00Z",
         "ingredients": [
             "400g spaghetti",
             "400g ground beef",
@@ -59,6 +60,7 @@
         "servings": 3,
         "calories": 420,
         "imgUrl": "./images/Chicken-Stir-Fry-main.webp",
+        "createdAt": "2025-01-16T14:10:00Z",
         "ingredients": [
             "400g chicken breast, sliced thin",
             "1 red bell pepper, sliced",
@@ -108,6 +110,7 @@
         "servings": 2,
         "calories": 550,
         "imgUrl": "./images/buddha-bowl-recipe-cropped.jpg",
+        "createdAt": "2025-04-15T14:10:00Z",
         "ingredients": [
             "1 cup quinoa",
             "1 can (400g) chickpeas, drained and rinsed",
@@ -152,6 +155,7 @@
         "servings": 4,
         "calories": 320,
         "imgUrl": "./images/buttermilk-pancakes-13.jpg",
+        "createdAt": "2025-03-15T14:10:00Z",
         "ingredients": [
             "2 cups all-purpose flour",
             "2 tbsp sugar",
@@ -198,6 +202,7 @@
         "servings": 2,
         "calories": 510,
         "imgUrl": "./images/salmon.webp",
+        "createdAt": "2025-02-15T14:10:00Z",
         "ingredients": [
             "2 salmon fillets (about 150–180g each)",
             "250g asparagus, trimmed",
@@ -238,6 +243,7 @@
         "servings": 3,
         "calories": 220,
         "imgUrl": "./images/greek-salad.jpg",
+        "createdAt": "2025-01-15T14:10:00Z",
         "ingredients": [
             "3 tomatoes, chopped",
             "1 cucumber, sliced",

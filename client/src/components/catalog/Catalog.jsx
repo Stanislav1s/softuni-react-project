@@ -20,12 +20,25 @@ export default function Catalog() {
     }, []);
     return (
         <>
+            <header className="container mt-5 text-center">
+                <h1 className="fw-bold">Recipe Catalog</h1>
+                <p className="text-muted">Browse our collection of delicious recipes</p>
+            </header>
+            {data.length === 0 && (
+                <div className="text-center mt-5">
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png"
+                        alt="No recipes"
+                        style={{ width: "120px", opacity: 0.6 }}
+                    />
+                    <h3 className="mt-3 fw-bold">No Recipes Found</h3>
+                    <p className="text-muted">There are no recipes yet. Add one to get started!</p>
+                </div>
+            )}
+
             <div>
 
-                <header className="container mt-5 text-center">
-                    <h1 className="fw-bold">Recipe Catalog</h1>
-                    <p className="text-muted">Browse our collection of delicious recipes</p>
-                </header>
+
                 {/* RECIPE GRID */}
                 <div className="container mt-4 pb-5">
                     <div className="row g-4">
