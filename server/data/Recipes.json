@@ -2,11 +2,11 @@
     {
         "_id": "d3b07384-d9b1-4f2a-9b2a-1a2e4f6c8f01",
         "title": "Spaghetti Bolognese",
-        "description": "Classic Italian pasta with a rich, slow-simmered beef and tomato sauce.",
+        "description1": "Classic Italian pasta with a rich, slow-simmered beef and tomato sauce.",
         "cooking_time": 60,
         "servings": 4,
         "calories": 680,
-        "imgUrl": "https://example.com/images/spaghetti-bolognese.jpg",
+        "imgUrl": "./images/eggplant-bolognese.jpg",
         "ingredients": [
             "400g spaghetti",
             "400g ground beef",
@@ -54,11 +54,11 @@
     {
         "_id": "a1f5c2b7-6f9d-4c1b-8e2b-3b7a9e5c2d34",
         "title": "Chicken Stir-Fry with Vegetables",
-        "description": "Quick pan-stirred chicken with colorful vegetables and a savory sauce—perfect for weeknights.",
+        "description1": "Quick pan-stirred chicken with colorful vegetables and a savory sauce—perfect for weeknights.",
         "cooking_time": 25,
         "servings": 3,
         "calories": 420,
-        "imgUrl": "https://example.com/images/chicken-stirfry.jpg",
+        "imgUrl": "./images/Chicken-Stir-Fry-main.webp",
         "ingredients": [
             "400g chicken breast, sliced thin",
             "1 red bell pepper, sliced",
@@ -103,11 +103,11 @@
     {
         "_id": "5c9fa8e2-2a11-4dbd-8b9e-7f6a3c4d5e67",
         "title": "Vegan Buddha Bowl",
-        "description": "Nourishing bowl with quinoa, roasted chickpeas, roasted vegetables and a tahini lemon dressing.",
+        "description1": "Nourishing bowl with quinoa, roasted chickpeas, roasted vegetables and a tahini lemon dressing.",
         "cooking_time": 40,
         "servings": 2,
         "calories": 550,
-        "imgUrl": "https://example.com/images/buddha-bowl.jpg",
+        "imgUrl": "./images/buddha-bowl-recipe-cropped.jpg",
         "ingredients": [
             "1 cup quinoa",
             "1 can (400g) chickpeas, drained and rinsed",
@@ -147,11 +147,11 @@
     {
         "_id": "9e2b1c4a-7a6f-4b2c-8c3d-0f1a2b3c4d55",
         "title": "Fluffy Buttermilk Pancakes",
-        "description": "Light and tender pancakes made with buttermilk—great for weekend breakfasts.",
+        "description1": "Light and tender pancakes made with buttermilk—great for weekend breakfasts.",
         "cooking_time": 20,
         "servings": 4,
         "calories": 320,
-        "imgUrl": "https://example.com/images/pancakes.jpg",
+        "imgUrl": "./images/buttermilk-pancakes-13.jpg",
         "ingredients": [
             "2 cups all-purpose flour",
             "2 tbsp sugar",
@@ -193,11 +193,11 @@
     {
         "_id": "f4a7b8c9-1d2e-4f3a-9b0c-6a7d8e9f0b12",
         "title": "Pan-Seared Salmon with Lemon Asparagus",
-        "description": "Crispy-skinned salmon fillets served with quickly sautéed asparagus and a lemon butter sauce.",
+        "description1": "Crispy-skinned salmon fillets served with quickly sautéed asparagus and a lemon butter sauce.",
         "cooking_time": 20,
         "servings": 2,
         "calories": 510,
-        "imgUrl": "https://example.com/images/salmon-asparagus.jpg",
+        "imgUrl": "./images/salmon.webp",
         "ingredients": [
             "2 salmon fillets (about 150–180g each)",
             "250g asparagus, trimmed",
@@ -233,11 +233,11 @@
     {
         "_id": "2b8e6d4f-3c1a-45b7-9a2f-8d7c6b5a4e33",
         "title": "Classic Greek Salad",
-        "description": "Fresh, crunchy salad with tomatoes, cucumber, red onion, olives and feta — great as a side or light meal.",
+        "description1": "Fresh, crunchy salad with tomatoes, cucumber, red onion, olives and feta — great as a side or light meal.",
         "cooking_time": 10,
         "servings": 3,
         "calories": 220,
-        "imgUrl": "https://example.com/images/greek-salad.jpg",
+        "imgUrl": "./images/greek-salad.jpg",
         "ingredients": [
             "3 tomatoes, chopped",
             "1 cucumber, sliced",

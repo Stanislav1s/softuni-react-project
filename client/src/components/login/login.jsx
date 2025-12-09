@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router"
-import "./login.css"
+
 export default function Login({
     onLogin
 }) {

@@ -1,6 +1,6 @@
 
 import { useNavigate } from 'react-router'
-import './register.css'
+
 export default function Register({ onRegister }
 ) {
     const navigate = useNavigate()
