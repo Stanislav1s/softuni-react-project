@@ -6,7 +6,7 @@
         "cooking_time": 60,
         "servings": 4,
         "calories": 680,
-        "imgUrl": "./images/eggplant-bolognese.jpg",
+        "imgUrl": "/images/eggplant-bolognese.jpg",
         "createdAt": "2025-05-11T14:10:00Z",
         "ingredients": [
             "400g spaghetti",
@@ -59,7 +59,7 @@
         "cooking_time": 25,
         "servings": 3,
         "calories": 420,
-        "imgUrl": "./images/Chicken-Stir-Fry-main.webp",
+        "imgUrl": "/images/Chicken-Stir-Fry-main.webp",
         "createdAt": "2025-01-16T14:10:00Z",
         "ingredients": [
             "400g chicken breast, sliced thin",
@@ -109,7 +109,7 @@
         "cooking_time": 40,
         "servings": 2,
         "calories": 550,
-        "imgUrl": "./images/buddha-bowl-recipe-cropped.jpg",
+        "imgUrl": "/images/buddha-bowl-recipe-cropped.jpg",
         "createdAt": "2025-04-15T14:10:00Z",
         "ingredients": [
             "1 cup quinoa",
@@ -154,7 +154,7 @@
         "cooking_time": 20,
         "servings": 4,
         "calories": 320,
-        "imgUrl": "./images/buttermilk-pancakes-13.jpg",
+        "imgUrl": "/images/buttermilk-pancakes-13.jpg",
         "createdAt": "2025-03-15T14:10:00Z",
         "ingredients": [
             "2 cups all-purpose flour",
@@ -201,7 +201,7 @@
         "cooking_time": 20,
         "servings": 2,
         "calories": 510,
-        "imgUrl": "./images/salmon.webp",
+        "imgUrl": "/images/salmon.webp",
         "createdAt": "2025-02-15T14:10:00Z",
         "ingredients": [
             "2 salmon fillets (about 150–180g each)",
@@ -242,7 +242,7 @@
         "cooking_time": 10,
         "servings": 3,
         "calories": 220,
-        "imgUrl": "./images/greek-salad.jpg",
+        "imgUrl": "/images/greek-salad.jpg",
         "createdAt": "2025-01-15T14:10:00Z",
         "ingredients": [
             "3 tomatoes, chopped",

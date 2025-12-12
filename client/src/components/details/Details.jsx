@@ -10,7 +10,7 @@ export default function Details() {
             .then(response => response.json())
             .then(result => setRecipe(result))
             .catch(err => alert(err.message))
-        console.log(recipe.ingredients);
+
 
 
     }, [recipeId]);
