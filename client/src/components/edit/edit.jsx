@@ -1,4 +1,28 @@
+import { useState } from "react"
+
 export default function Edit() {
+    const initialValues = {
+
+        title: '',
+        description1: '',
+        cooking_time: '',
+        servings: '',
+        calories: '',
+        imgUrl: '',
+        createdAt: '',
+        ingredients: '',
+        protein: '',
+        carbs: '',
+        fats: '',
+        step_by_step_guide: '',
+    }
+    const [value, setValue] = useState(initialValues)
+    const changeHandler = (e) => {
+        setValue(state => ({
+            ...state,
+            [e.target.name]: e.target.value,
+        }))
+    }
     return (<>
         <>
             {/* Hero Header */}
@@ -23,16 +47,19 @@ export default function Edit() {
                                                 className="form-control"
                                                 placeholder="e.g. Spaghetti Carbonara"
                                                 required=""
+                                                name="title"
+                                                onChange={changeHandler}
+                                                value={value.title}
                                             />
                                         </div>
                                         <div className="col-md-4 mb-4">
                                             <label className="form-label fw-semibold">Category</label>
                                             <select className="form-select">
-                                                <option>Breakfast</option>
-                                                <option>Lunch</option>
-                                                <option>Dinner</option>
-                                                <option>Dessert</option>
-                                                <option>Drinks</option>
+                                                <option value='Breakfast'>Breakfast</option>
+                                                <option value='Lunch'>Lunch</option>
+                                                <option value='Dinner'>Dinner</option>
+                                                <option value='Dessert'>Dessert</option>
+                                                <option value='Drinks'>Drinks</option>
                                             </select>
                                         </div>
                                     </div>
@@ -44,6 +71,9 @@ export default function Edit() {
                                             className="form-control"
                                             placeholder="Paste an image URL..."
                                             required=""
+                                            onChange={changeHandler}
+                                            value={value.imgUrl}
+                                            name="imgUrl"
                                         />
                                     </div>
                                     {/* Cooking Time, Servings, Difficulty */}
@@ -56,6 +86,9 @@ export default function Edit() {
                                                 type="number"
                                                 className="form-control"
                                                 placeholder="e.g. 30"
+                                                onChange={changeHandler}
+                                                value={value.cooking_time}
+                                                name="cooking_time"
                                             />
                                         </div>
                                         <div className="col-md-4 mb-4">
@@ -64,14 +97,17 @@ export default function Edit() {
                                                 type="number"
                                                 className="form-control"
                                                 placeholder="e.g. 4"
+                                                onChange={changeHandler}
+                                                value={value.servings}
+                                                name="servings"
                                             />
                                         </div>
                                         <div className="col-md-4 mb-4">
                                             <label className="form-label fw-semibold">Difficulty</label>
                                             <select className="form-select">
-                                                <option>Easy</option>
-                                                <option>Medium</option>
-                                                <option>Hard</option>
+                                                <option value='Easy'>Easy</option>
+                                                <option value='Medium'>Medium</option>
+                                                <option value='Hard'>Hard</option>
                                             </select>
                                         </div>
                                     </div>
@@ -85,7 +121,9 @@ export default function Edit() {
                                             rows={3}
                                             placeholder="A short intro to the recipe..."
                                             required=""
-                                            defaultValue={""}
+                                            onChange={changeHandler}
+                                            value={value.description1}
+                                            name="description1"
                                         />
                                     </div>
                                     {/* Ingredients */}
@@ -97,9 +135,13 @@ export default function Edit() {
                                             className="form-control"
                                             rows={5}
                                             placeholder="e.g. 200g pasta
-100g bacon
-2 eggs"
-                                            defaultValue={""}
+                                            100g bacon
+                                            2 eggs"
+                                            onChange={changeHandler}
+                                            value={value.ingredients}
+                                            name="ingredients"
+
+
                                         />
                                     </div>
                                     {/* Nutrition Facts */}
@@ -111,6 +153,10 @@ export default function Edit() {
                                                 type="number"
                                                 className="form-control"
                                                 placeholder="e.g. 450"
+                                                onChange={changeHandler}
+                                                value={value.calories}
+                                                name="calories"
+
                                             />
                                         </div>
                                         <div className="col-md-3 mb-4">
@@ -119,6 +165,9 @@ export default function Edit() {
                                                 type="number"
                                                 className="form-control"
                                                 placeholder="e.g. 18"
+                                                onChange={changeHandler}
+                                                value={value.protein}
+                                                name="protein"
                                             />
                                         </div>
                                         <div className="col-md-3 mb-4">
@@ -127,6 +176,9 @@ export default function Edit() {
                                                 type="number"
                                                 className="form-control"
                                                 placeholder="e.g. 50"
+                                                onChange={changeHandler}
+                                                value={value.carbs}
+                                                name="carbs"
                                             />
                                         </div>
                                         <div className="col-md-3 mb-4">
@@ -135,6 +187,9 @@ export default function Edit() {
                                                 type="number"
                                                 className="form-control"
                                                 placeholder="e.g. 15"
+                                                onChange={changeHandler}
+                                                value={value.fats}
+                                                name="fats"
                                             />
                                         </div>
                                     </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router"
+import { useParams, Link } from "react-router"
 
 
 export default function Details() {
@@ -39,7 +39,10 @@ export default function Details() {
                 <p className="text-muted">
                     {recipe.description1}
                 </p>
+
+
                 <div className="d-flex gap-4 text-muted mt-2">
+
                     <span>
                         <i className="bi bi-clock me-1"></i>{recipe.cooking_time}
                     </span>
@@ -52,8 +55,25 @@ export default function Details() {
                 </div>
                 <hr className="mt-4" />
             </div>
+            <div className="d-flex justify-content-center align-items-center mb-3">
+
+                <Link to="/favourites" className="btn btn-outline-danger rounded-square">
+                    <i className="bi bi-heart"></i> Favourite
+                </Link>
+
+                <Link to={`/${recipeId}/edit`} className="btn btn-warning ms-3">
+                    <i className="bi bi-pencil-square"></i> Edit
+                </Link>
+
+                <Link to={`/${recipeId}/delete`} className="btn btn-danger ms-3">
+                    <i className="bi bi-trash"></i> Delete
+                </Link>
+
+            </div>
             {/* CONTENT GRID */}
+
             <div className="container mt-4 pb-5">
+
                 <div className="row">
                     {/* LEFT SIDE: INGREDIENTS */}
                     <div className="col-lg-4 mb-4 shadow p-3 mb-5 bg-body rounded">
@@ -82,9 +102,9 @@ export default function Details() {
                     </div>
                     {/* RIGHT SIDE: STEPS */}
                     <div className="col-lg-8">
-                        <h4 className="fw-bold mb-3">Instructions</h4>
+                        <h4 className="fw-bold mb-3 ms-3">Instructions</h4>
                         {Object.entries(recipe.step_by_step_guide || {}).map(([stepKey, step], index) => (
-                            <div className="step-box" key={stepKey}>
+                            <div className="step-box ms-3" key={stepKey}>
                                 <h5 className="fw-bold ">{index + 1}.{step.title}</h5>
                                 <p>{step.description}</p>
                             </div>))}
