@@ -7,7 +7,7 @@ export default function Home() {
     const [latestRecipes, setLatestRecipes] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3030/jsonstore/Recipes")
+        fetch("http://localhost:3030/jsonstore/recipes")
             .then(response => response.json())
             .then(result => {
 

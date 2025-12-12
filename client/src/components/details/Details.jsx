@@ -1,29 +1,53 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router"
+
+
 export default function Details() {
+    const { recipeId } = useParams()
+    const [recipe, setRecipe] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:3030/jsonstore/recipes/${recipeId}`)
+            .then(response => response.json())
+            .then(result => setRecipe(result))
+            .catch(err => alert(err.message))
+        console.log(recipe.ingredients);
+
+
+    }, [recipeId]);
+
+    useEffect(() => {
+        import('bootstrap-icons/font/bootstrap-icons.css');
+        import('bootstrap/dist/css/bootstrap.min.css')
+        import('bootstrap/dist/js/bootstrap.bundle.min.js')
+    }, []);
+
+
     return (<>
         <>
+
             <div className="container mt-4 mb-4">
                 <img
-                    src="https://media.istockphoto.com/id/637214478/photo/pasta-plate.jpg?s=612x612&w=0&k=20&c=oebCQG_Zfv2zJpobSzpF6JFNdsBQUjG6MdQh-En5l3c="
-                    alt="Italian Pasta Carbonara"
+                    src={recipe.imgUrl}
+                    alt={recipe.title}
                     className="img-fluid rounded-4 shadow"
                     style={{ width: "100%", objectFit: "cover", maxHeight: "420px" }}
                 />
             </div>
 
             <div className="container mt-4">
-                <h1 className="fw-bold">Italian Pasta Carbonara</h1>
+                <h1 className="fw-bold">{recipe.title}</h1>
                 <p className="text-muted">
-                    Creamy, rich, classic Italian dish ready in 20 minutes.
+                    {recipe.description1}
                 </p>
                 <div className="d-flex gap-4 text-muted mt-2">
                     <span>
-                        <i className="fa fa-clock me-1" /> 20 min
+                        <i className="bi bi-clock me-1"></i>{recipe.cooking_time}
                     </span>
                     <span>
-                        <i className="fa fa-person me-1" /> Serves 2
+                        <i className="bi bi-person me-1"></i>{recipe.servings}
                     </span>
                     <span>
-                        <i className="fa fa-fire me-1" /> 650 kcal
+                        <i className="bi bi-fire me-1" ></i>{recipe.calories}
                     </span>
                 </div>
                 <hr className="mt-4" />
@@ -32,58 +56,38 @@ export default function Details() {
             <div className="container mt-4 pb-5">
                 <div className="row">
                     {/* LEFT SIDE: INGREDIENTS */}
-                    <div className="col-lg-4 mb-4">
+                    <div className="col-lg-4 mb-4 shadow p-3 mb-5 bg-body rounded">
                         <h4 className="fw-bold mb-3">Ingredients</h4>
-                        <div className="ingredient-item">200g spaghetti</div>
-                        <div className="ingredient-item">100g pancetta (or bacon)</div>
-                        <div className="ingredient-item">2 large eggs</div>
-                        <div className="ingredient-item">1/2 cup grated Parmesan</div>
-                        <div className="ingredient-item">2 cloves garlic, minced</div>
-                        <div className="ingredient-item">Salt &amp; black pepper</div>
-                        <div className="ingredient-item">Olive oil</div>
+                        <ul className="list-group list-group-flush">
+                            {recipe.ingredients?.map((item, index) => (
+                                <div className="list-group-item" key={index}>
+                                    {item}
+                                </div>
+                            ))}</ul>
                         <h4 className="fw-bold mt-5 mb-3">Nutrition (per serving)</h4>
                         <div className="nutrition-box">
                             <p>
-                                <strong>Calories:</strong> 650 kcal
+                                <strong>Calories:</strong> {recipe.calories}
                             </p>
                             <p>
-                                <strong>Protein:</strong> 25 g
+                                <strong>Protein:</strong> {recipe.protein}
                             </p>
                             <p>
-                                <strong>Carbs:</strong> 60 g
+                                <strong>Carbs:</strong> {recipe.carbs}
                             </p>
                             <p>
-                                <strong>Fats:</strong> 30 g
+                                <strong>Fats:</strong> {recipe.fats}
                             </p>
                         </div>
                     </div>
                     {/* RIGHT SIDE: STEPS */}
                     <div className="col-lg-8">
                         <h4 className="fw-bold mb-3">Instructions</h4>
-                        <div className="step-box">
-                            <h5 className="fw-bold">1. Cook the spaghetti</h5>
-                            <p>Boil salted water and cook the spaghetti until al dente.</p>
-                        </div>
-                        <div className="step-box">
-                            <h5 className="fw-bold">2. Prepare the pancetta</h5>
-                            <p>Heat olive oil in a pan, add pancetta, and cook until crispy.</p>
-                        </div>
-                        <div className="step-box">
-                            <h5 className="fw-bold">3. Mix eggs &amp; cheese</h5>
-                            <p>In a bowl, whisk together eggs and Parmesan cheese.</p>
-                        </div>
-                        <div className="step-box">
-                            <h5 className="fw-bold">4. Combine pasta and pancetta</h5>
-                            <p>Add the cooked pasta to the pan and stir well.</p>
-                        </div>
-                        <div className="step-box">
-                            <h5 className="fw-bold">5. Add the egg mixture</h5>
-                            <p>Remove the pan from heat and quickly stir in the egg mixture.</p>
-                        </div>
-                        <div className="step-box">
-                            <h5 className="fw-bold">6. Serve and enjoy</h5>
-                            <p>Season with black pepper and serve hot with extra Parmesan.</p>
-                        </div>
+                        {Object.entries(recipe.step_by_step_guide || {}).map(([stepKey, step], index) => (
+                            <div className="step-box" key={stepKey}>
+                                <h5 className="fw-bold ">{index + 1}.{step.title}</h5>
+                                <p>{step.description}</p>
+                            </div>))}
                     </div>
                 </div>
             </div>

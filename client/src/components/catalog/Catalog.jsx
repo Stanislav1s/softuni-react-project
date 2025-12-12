@@ -7,7 +7,7 @@ export default function Catalog() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch("http://localhost:3030/jsonstore/Recipes");
+                const response = await fetch("http://localhost:3030/jsonstore/recipes");
                 const result = await response.json();
                 setData(Object.values(result));
             }

@@ -1,5 +1,5 @@
-[
-    {
+{
+    "d3b07384-d9b1-4f2a-9b2a-1a2e4f6c8f01": {
         "_id": "d3b07384-d9b1-4f2a-9b2a-1a2e4f6c8f01",
         "title": "Spaghetti Bolognese",
         "description1": "Classic Italian pasta with a rich, slow-simmered beef and tomato sauce.",
@@ -52,7 +52,7 @@
             }
         }
     },
-    {
+    "a1f5c2b7-6f9d-4c1b-8e2b-3b7a9e5c2d34": {
         "_id": "a1f5c2b7-6f9d-4c1b-8e2b-3b7a9e5c2d34",
         "title": "Chicken Stir-Fry with Vegetables",
         "description1": "Quick pan-stirred chicken with colorful vegetables and a savory sauce—perfect for weeknights.",
@@ -102,7 +102,7 @@
             }
         }
     },
-    {
+    "5c9fa8e2-2a11-4dbd-8b9e-7f6a3c4d5e67": {
         "_id": "5c9fa8e2-2a11-4dbd-8b9e-7f6a3c4d5e67",
         "title": "Vegan Buddha Bowl",
         "description1": "Nourishing bowl with quinoa, roasted chickpeas, roasted vegetables and a tahini lemon dressing.",
@@ -147,7 +147,7 @@
             }
         }
     },
-    {
+    "9e2b1c4a-7a6f-4b2c-8c3d-0f1a2b3c4d55": {
         "_id": "9e2b1c4a-7a6f-4b2c-8c3d-0f1a2b3c4d55",
         "title": "Fluffy Buttermilk Pancakes",
         "description1": "Light and tender pancakes made with buttermilk—great for weekend breakfasts.",
@@ -194,7 +194,7 @@
             }
         }
     },
-    {
+    "f4a7b8c9-1d2e-4f3a-9b0c-6a7d8e9f0b12": {
         "_id": "f4a7b8c9-1d2e-4f3a-9b0c-6a7d8e9f0b12",
         "title": "Pan-Seared Salmon with Lemon Asparagus",
         "description1": "Crispy-skinned salmon fillets served with quickly sautéed asparagus and a lemon butter sauce.",
@@ -235,7 +235,7 @@
             }
         }
     },
-    {
+    "2b8e6d4f-3c1a-45b7-9a2f-8d7c6b5a4e33": {
         "_id": "2b8e6d4f-3c1a-45b7-9a2f-8d7c6b5a4e33",
         "title": "Classic Greek Salad",
         "description1": "Fresh, crunchy salad with tomatoes, cucumber, red onion, olives and feta — great as a side or light meal.",
@@ -278,4 +278,4 @@
             }
         }
     }
-]
+}

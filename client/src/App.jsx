@@ -44,9 +44,9 @@ function App() {
         <Route path='/register' element={<Register onRegister={registerHandler} />} />
         <Route path='/login' element={<Login onLogin={loginHandler} />} />
         <Route path='/logout' element={<Logout onLogout={logoutHandler} />} />
-        <Route path='/:id/details' element={<Details />} />
+        <Route path='/:recipeId/details' element={<Details />} />
         <Route path='/favourites' element={<Favourites />} />
-        <Route path='/:id/edit' element={<Edit />} />
+        <Route path='/:recipeId/edit' element={<Edit />} />
       </Routes>
 
     </>

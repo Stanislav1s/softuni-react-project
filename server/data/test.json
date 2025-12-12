@@ -1,0 +1,105 @@
+{
+    "123": {
+        "_id": "d3b07384-d9b1-4f2a-9b2a-1a2e4f6c8f01",
+        "title": "Spaghetti Bolognese",
+        "description1": "Classic Italian pasta with a rich, slow-simmered beef and tomato sauce.",
+        "cooking_time": 60,
+        "servings": 4,
+        "calories": 680,
+        "imgUrl": "./images/eggplant-bolognese.jpg",
+        "createdAt": "2025-05-11T14:10:00Z",
+        "ingredients": [
+            "400g spaghetti",
+            "400g ground beef",
+            "1 onion, finely chopped",
+            "2 cloves garlic, minced",
+            "400g canned crushed tomatoes",
+            "2 tbsp tomato paste",
+            "100ml red wine (optional)",
+            "1 carrot, grated",
+            "2 tbsp olive oil",
+            "Salt",
+            "Pepper",
+            "Fresh basil"
+        ],
+        "protein": 32,
+        "carbs": 78,
+        "fats": 22,
+        "step_by_step_guide": {
+            "step1": {
+                "title": "Prepare ingredients",
+                "description": "Chop the onion and garlic, grate the carrot, and open the canned tomatoes."
+            },
+            "step2": {
+                "title": "Sauté vegetables",
+                "description": "Heat olive oil in a large pan, add onion and garlic and cook until translucent. Add grated carrot and cook 2–3 minutes."
+            },
+            "step3": {
+                "title": "Brown the beef",
+                "description": "Add ground beef and cook until browned, breaking it up with a spoon."
+            },
+            "step4": {
+                "title": "Add tomatoes and simmer",
+                "description": "Stir in tomato paste, crushed tomatoes and red wine (if using). Season with salt and pepper. Reduce heat and simmer 30–35 minutes."
+            },
+            "step5": {
+                "title": "Cook spaghetti",
+                "description": "Cook spaghetti in salted boiling water according to package instructions until al dente. Drain."
+            },
+            "step6": {
+                "title": "Serve",
+                "description": "Combine sauce with spaghetti or spoon sauce over pasta. Garnish with fresh basil."
+            }
+        }
+    },
+    "14": {
+        "_id": "a1f5c2b7-6f9d-4c1b-8e2b-3b7a9e5c2d34",
+        "title": "Chicken Stir-Fry with Vegetables",
+        "description1": "Quick pan-stirred chicken with colorful vegetables and a savory sauce—perfect for weeknights.",
+        "cooking_time": 25,
+        "servings": 3,
+        "calories": 420,
+        "imgUrl": "./images/Chicken-Stir-Fry-main.webp",
+        "createdAt": "2025-01-16T14:10:00Z",
+        "ingredients": [
+            "400g chicken breast, sliced thin",
+            "1 red bell pepper, sliced",
+            "1 yellow bell pepper, sliced",
+            "1 broccoli head, cut into florets",
+            "2 tbsp soy sauce",
+            "1 tbsp oyster sauce",
+            "1 tbsp sesame oil",
+            "2 cloves garlic, minced",
+            "1 inch ginger, grated",
+            "2 tbsp vegetable oil",
+            "Salt",
+            "Black pepper",
+            "Cooked rice to serve"
+        ],
+        "protein": 38,
+        "carbs": 28,
+        "fats": 14,
+        "step_by_step_guide": {
+            "step1": {
+                "title": "Make the sauce",
+                "description": "Whisk together soy sauce, oyster sauce, and sesame oil. Set aside."
+            },
+            "step2": {
+                "title": "Prep and heat pan",
+                "description": "Heat vegetable oil in a wok or large skillet over high heat."
+            },
+            "step3": {
+                "title": "Cook chicken",
+                "description": "Add chicken slices and stir-fry until cooked through, about 4–5 minutes. Remove and set aside."
+            },
+            "step4": {
+                "title": "Stir-fry vegetables",
+                "description": "Add garlic and ginger, then add peppers and broccoli. Stir-fry 3–4 minutes until crisp-tender."
+            },
+            "step5": {
+                "title": "Combine and finish",
+                "description": "Return chicken to the pan, add sauce, toss everything until coated and heated through. Serve over rice."
+            }
+        }
+    }
+}
