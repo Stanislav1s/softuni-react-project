@@ -1,14 +1,14 @@
 
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
+import useForm from '../hooks/useForm.js'
 
-export default function Register({ onRegister }
+export default function Register({
+    onRegister }
 ) {
-    const navigate = useNavigate()
-    const registerSubmit = (formData) => {
+    const navigate = useNavigate();
+    const registerHandler = (values) => {
+        const { email, password, confirmPass } = values;
 
-        const email = formData.get('email')
-        const password = formData.get('password')
-        const confirmPass = formData.get('confirmPass')
 
         if (!email || !password) {
             alert('Email and password are required!')
@@ -24,6 +24,13 @@ export default function Register({ onRegister }
             alert(err.message)
         }
     }
+    const {
+        register, formAction } = useForm(registerHandler, {
+            email: '',
+            password: '',
+            confirmPass: '',
+
+        })
     return (<>
         <div className="container register-wrapper">
             <div className="row justify-content-center">
@@ -33,7 +40,7 @@ export default function Register({ onRegister }
                         <p className="text-center mb-4 text-muted">
                             Join Foody and share your recipes
                         </p>
-                        <form action={registerSubmit}>
+                        <form action={formAction}>
                             {/* Email */}
                             <div className="mb-4">
                                 <label className="form-label fw-semibold">Email Address</label>
@@ -42,7 +49,7 @@ export default function Register({ onRegister }
                                     className="form-control"
                                     placeholder="example@mail.com"
                                     required=""
-                                    name='email'
+                                    {...register('email')}
 
                                 />
                             </div>
@@ -54,7 +61,7 @@ export default function Register({ onRegister }
                                     className="form-control"
                                     placeholder="Create password"
                                     required=""
-                                    name='password'
+                                    {...register('password')}
                                 />
                             </div>
                             {/* Confirm Password */}
@@ -65,7 +72,7 @@ export default function Register({ onRegister }
                                     className="form-control"
                                     placeholder="Repeat password"
                                     required=""
-                                    name='confirmPass'
+                                    {...register('confirmPass')}
                                 />
                             </div>
 
@@ -79,9 +86,9 @@ export default function Register({ onRegister }
                         <div className="text-center mt-4">
                             <p className="mb-1">
                                 Already have an account?{" "}
-                                <a href="login.html" className="text-primary fw-semibold">
+                                <Link to="/login" className="text-primary fw-semibold">
                                     Login here
-                                </a>
+                                </Link>
                             </p>
                         </div>
                     </div>
