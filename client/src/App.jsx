@@ -9,18 +9,28 @@ import Details from './components/details/details.jsx'
 import Favourites from './components/favourites/Favourites.jsx'
 import Edit from './components/edit/edit.jsx'
 import Logout from './components/logout/Logout.jsx'
+
 function App() {
-  const [registeredUsers, setRegisteredUsers] = useState([])
   const [user, setUser] = useState(null)
 
 
-  const registerHandler = (email, password) => {
-    if (registeredUsers.some(user => user.email === email)) {
-      throw new Error("Email is alredy taken");
-    }
+  const registerHandler = async (email, password) => {
+
     const newUser = { email, password };
-    setRegisteredUsers(state => [...state, newUser]);
-    setUser(newUser);
+
+    const response = await fetch('http://localhost:3030/users/register', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newUser)
+    })
+
+    const result = await response.json()
+    console.log(result);
+
+    setUser(result);
+
   }
 
 

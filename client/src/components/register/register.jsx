@@ -6,7 +6,8 @@ export default function Register({
     onRegister }
 ) {
     const navigate = useNavigate();
-    const registerHandler = (values) => {
+
+    const registerHandler = async (values) => {
         const { email, password, confirmPass } = values;
 
 
@@ -17,7 +18,7 @@ export default function Register({
             alert('password missmatch')
         }
         try {
-            onRegister(email, password)
+            await onRegister(email, password)
             navigate('/')
         }
         catch (err) {
