@@ -6,6 +6,7 @@
         "cooking_time": 60,
         "servings": 4,
         "calories": 680,
+        "category": "Dinner",
         "imgUrl": "/images/eggplant-bolognese.jpg",
         "createdAt": "2025-05-11T14:10:00Z",
         "ingredients": [
@@ -59,6 +60,7 @@
         "cooking_time": 25,
         "servings": 3,
         "calories": 420,
+        "category": "Dinner",
         "imgUrl": "/images/Chicken-Stir-Fry-main.webp",
         "createdAt": "2025-01-16T14:10:00Z",
         "ingredients": [
@@ -109,6 +111,7 @@
         "cooking_time": 40,
         "servings": 2,
         "calories": 550,
+        "category": "Dinner",
         "imgUrl": "/images/buddha-bowl-recipe-cropped.jpg",
         "createdAt": "2025-04-15T14:10:00Z",
         "ingredients": [
@@ -154,6 +157,7 @@
         "cooking_time": 20,
         "servings": 4,
         "calories": 320,
+        "category": "Breakfast",
         "imgUrl": "/images/buttermilk-pancakes-13.jpg",
         "createdAt": "2025-03-15T14:10:00Z",
         "ingredients": [
@@ -201,6 +205,7 @@
         "cooking_time": 20,
         "servings": 2,
         "calories": 510,
+        "category": "Dinner",
         "imgUrl": "/images/salmon.webp",
         "createdAt": "2025-02-15T14:10:00Z",
         "ingredients": [
@@ -242,6 +247,7 @@
         "cooking_time": 10,
         "servings": 3,
         "calories": 220,
+        "category": "Snack",
         "imgUrl": "/images/greek-salad.jpg",
         "createdAt": "2025-01-15T14:10:00Z",
         "ingredients": [

@@ -52,6 +52,9 @@ export default function Details() {
                     <span>
                         <i className="bi bi-fire me-1" ></i>{recipe.calories}
                     </span>
+                    <span>
+                        <i className="bi bi-fork-knife"></i> {recipe.category}
+                    </span>
                 </div>
                 <hr className="mt-4" />
             </div>

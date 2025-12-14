@@ -1,28 +1,84 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router"
+import request from "../../utils/request.js"
+
+const initialValues = {
+
+    title: '',
+    description1: '',
+    cooking_time: '',
+    servings: '',
+    calories: '',
+    imgUrl: '',
+    createdAt: '',
+    ingredients: [],
+    protein: '',
+    carbs: '',
+    fats: '',
+    step_by_step_guide: [],
+}
 
 export default function Edit() {
-    const initialValues = {
-
-        title: '',
-        description1: '',
-        cooking_time: '',
-        servings: '',
-        calories: '',
-        imgUrl: '',
-        createdAt: '',
-        ingredients: '',
-        protein: '',
-        carbs: '',
-        fats: '',
-        step_by_step_guide: '',
-    }
+    const navigate = useNavigate()
+    const { recipeId } = useParams()
     const [value, setValue] = useState(initialValues)
     const changeHandler = (e) => {
         setValue(state => ({
             ...state,
             [e.target.name]: e.target.value,
         }))
+    };
+    useEffect(() => {
+        request(`/${recipeId}`)
+            .then(result => {
+
+                const stepsObject = result.step_by_step_guide || {};
+                const stepsArray = Object.values(stepsObject);
+
+                setValue({
+                    ...initialValues,
+                    ...result,
+                    step_by_step_guide: stepsArray
+                });
+            })
+            .catch(err => alert(err.message));
+    }, [recipeId]);
+
+    const editHandler = async () => {
+
+        try {
+            await request(`/${recipeId}`, 'PUT', value)
+            navigate(`/${recipeId}/details`)
+        } catch (err) {
+            alert(err.message)
+        }
     }
+
+
+    const addStep = () => {
+        setValue(state => ({
+            ...state,
+            step_by_step_guide: [
+                ...state.step_by_step_guide,
+                { title: "", description: "" }
+            ]
+        }));
+    };
+
+    const handleStepChange = (index, field, newValue) => {
+        setValue(state => {
+            const steps = [...state.step_by_step_guide];
+            steps[index] = {
+                ...steps[index],
+                [field]: newValue
+            };
+
+            return {
+                ...state,
+                step_by_step_guide: steps
+            };
+        });
+    };
     return (<>
         <>
             {/* Hero Header */}
@@ -37,7 +93,7 @@ export default function Edit() {
                         <div className="card shadow-lg border-0 rounded-4">
                             <div className="card-body p-5">
                                 <h2 className="fw-bold mb-4 text-center">Recipe Information</h2>
-                                <form>
+                                <form action={editHandler}>
                                     {/* Title & Category */}
                                     <div className="row">
                                         <div className="col-md-8 mb-4">
@@ -134,14 +190,13 @@ export default function Edit() {
                                         <textarea
                                             className="form-control"
                                             rows={5}
-                                            placeholder="e.g. 200g pasta
-                                            100g bacon
-                                            2 eggs"
-                                            onChange={changeHandler}
-                                            value={value.ingredients}
-                                            name="ingredients"
-
-
+                                            value={value.ingredients.join("\n")}
+                                            onChange={(e) =>
+                                                setValue(state => ({
+                                                    ...state,
+                                                    ingredients: e.target.value.split("\n")
+                                                }))
+                                            }
                                         />
                                     </div>
                                     {/* Nutrition Facts */}
@@ -194,18 +249,33 @@ export default function Edit() {
                                         </div>
                                     </div>
                                     {/* Instructions */}
-                                    <div className="mb-4">
-                                        <label className="form-label fw-semibold">
-                                            Instructions (steps)
-                                        </label>
-                                        <textarea
-                                            className="form-control"
-                                            rows={7}
-                                            placeholder="Step-by-step instructions..."
-                                            required=""
-                                            defaultValue={""}
-                                        />
-                                    </div>
+                                    <h4>Instructions</h4>
+
+                                    {value.step_by_step_guide.map((step, index) => (
+                                        <div key={index} className="mb-3">
+                                            <input
+                                                type="text"
+                                                className="form-control mb-2"
+                                                value={step.title}
+                                                onChange={(e) =>
+                                                    handleStepChange(index, "title", e.target.value)
+                                                }
+                                                placeholder={`Step ${index + 1} title`}
+                                            />
+
+                                            <textarea
+                                                className="form-control"
+                                                value={step.description}
+                                                onChange={(e) =>
+                                                    handleStepChange(index, "description", e.target.value)
+                                                }
+                                                placeholder={`Step ${index + 1} description`}
+                                            />
+                                        </div>
+                                    ))}
+                                    <button type="button" onClick={addStep} className="btn btn-outline-primary">
+                                        + Add Step
+                                    </button>
                                     {/* Submit Button */}
                                     <div className="text-center mt-4">
                                         <button className="btn btn-primary px-5 py-2">
