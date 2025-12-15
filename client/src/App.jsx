@@ -9,6 +9,7 @@ import Details from './components/details/details.jsx'
 import Favourites from './components/favourites/Favourites.jsx'
 import Edit from './components/edit/edit.jsx'
 import Logout from './components/logout/Logout.jsx'
+import UserContext from './contexts/UserContext.js'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -44,21 +45,28 @@ function App() {
   const logoutHandler = () => {
     setUser(null)
   }
-
+  const userContextValues = {
+    user,
+    isAuthenticated: !!user?.accesToken,
+    registerHandler,
+    loginHandler,
+    logoutHandler
+  }
   return (
     <>
-      <Header user={user} />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/catalog' element={<Catalog />} />
-        <Route path='/register' element={<Register onRegister={registerHandler} />} />
-        <Route path='/login' element={<Login onLogin={loginHandler} />} />
-        <Route path='/logout' element={<Logout onLogout={logoutHandler} />} />
-        <Route path='/:recipeId/details' element={<Details />} />
-        <Route path='/favourites' element={<Favourites />} />
-        <Route path='/:recipeId/edit' element={<Edit />} />
-      </Routes>
-
+      <UserContext.Provider value={userContextValues}>
+        <Header user={user} />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/catalog' element={<Catalog />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login onLogin={loginHandler} />} />
+          <Route path='/logout' element={<Logout onLogout={logoutHandler} />} />
+          <Route path='/:recipeId/details' element={<Details />} />
+          <Route path='/favourites' element={<Favourites />} />
+          <Route path='/:recipeId/edit' element={<Edit />} />
+        </Routes>
+      </UserContext.Provider>
     </>
   )
 }

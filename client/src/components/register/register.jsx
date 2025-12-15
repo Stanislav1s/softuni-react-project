@@ -1,13 +1,16 @@
 
 import { Link, useNavigate } from 'react-router'
-import useForm from '../hooks/useForm.js'
+import useForm from '../../hooks/useForm.js'
+import { useContext } from 'react';
+import UserContext from '../../contexts/UserContext.js';
 
-export default function Register({
-    onRegister }
-) {
+
+export default function Register() {
     const navigate = useNavigate();
+    const { registerHandler } = useContext(UserContext)
 
-    const registerHandler = async (values) => {
+
+    const registerSubmitHandler = async (values) => {
         const { email, password, confirmPass } = values;
 
 
@@ -18,7 +21,7 @@ export default function Register({
             alert('password missmatch')
         }
         try {
-            await onRegister(email, password)
+            await registerHandler(email, password)
             navigate('/')
         }
         catch (err) {
@@ -26,7 +29,7 @@ export default function Register({
         }
     }
     const {
-        register, formAction } = useForm(registerHandler, {
+        register, formAction } = useForm(registerSubmitHandler, {
             email: '',
             password: '',
             confirmPass: '',
