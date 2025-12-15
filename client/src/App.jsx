@@ -51,7 +51,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/catalog' element={<Catalog />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login onLogin={loginHandler} />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Logout onLogout={logoutHandler} />} />
           <Route path='/:recipeId/details' element={<Details />} />
           <Route path='/favourites' element={<Favourites />} />

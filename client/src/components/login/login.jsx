@@ -1,19 +1,22 @@
 import { useNavigate } from "react-router"
+import useForm from "../../hooks/useForm.js"
+import { useContext } from "react"
+import UserContext from "../../contexts/UserContext.js"
 
 export default function Login({
-    onLogin
+
 }) {
     const navigate = useNavigate()
-    const submitAction = (formData) => {
-        const email = formData.get('email')
-        const password = formData.get('password')
+    const { loginHandler } = useContext(UserContext)
+    const submitHandler = async ({ email, password }) => {
+
 
         if (!email || !password) {
-            alert('Email and password is required!')
+            alert('Email and password are required!')
         }
 
         try {
-            onLogin(email, password)
+            await loginHandler(email, password)
             navigate('/')
         }
         catch (err) {
@@ -21,6 +24,13 @@ export default function Login({
         }
 
     }
+    const {
+        register,
+        formAction
+    } = useForm(submitHandler, {
+        email: '',
+        password: ''
+    })
     return (<>
         <div className="container login-wrapper">
             <div className="row justify-content-center">
@@ -28,9 +38,9 @@ export default function Login({
                     <div className="login-card">
                         <h2 className="fw-bold text-center mb-4">Welcome Back</h2>
                         <p className="text-center mb-4 text-muted">
-                            Login to your Foody account
+                            Login to your account
                         </p>
-                        <form action={submitAction}>
+                        <form action={formAction}>
                             {/* Email */}
                             <div className="mb-4">
                                 <label className="form-label fw-semibold">Email Address</label>
@@ -39,7 +49,8 @@ export default function Login({
                                     className="form-control"
                                     placeholder="example@mail.com"
                                     required=""
-                                    name="email"
+                                    {...register('email')}
+
                                 />
                             </div>
                             {/* Password */}
@@ -50,7 +61,7 @@ export default function Login({
                                     className="form-control"
                                     placeholder="Enter your password"
                                     required=""
-                                    name="password"
+                                    {...register('password')}
                                 />
                             </div>
                             {/* Login Button */}
