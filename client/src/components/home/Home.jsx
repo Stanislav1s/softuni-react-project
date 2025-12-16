@@ -8,11 +8,11 @@ export default function Home() {
 
     useEffect(() => {
         fetch("http://localhost:3030/jsonstore/recipes")
-            .then(response => response.json())
+            .then(res => res.json())
             .then(result => {
-
                 const sortedLatest = Object.values(result)
-                    .sort((a, b) => new Date(b._createdAt) - new Date(a._createdAt))
+                    .filter(r => r.createdAt) // safety
+                    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
                     .slice(0, 3);
 
                 setLatestRecipes(sortedLatest);

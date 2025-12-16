@@ -42,8 +42,13 @@ export default function Catalog() {
                 {/* RECIPE GRID */}
                 <div className="container mt-4 pb-5">
                     <div className="row g-4">
-                        {data.map(recipe => <RecipeCard key={recipe._id} {...recipe} />)}
-
+                        {data
+                            .slice()
+                            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+                            .map(recipe => (
+                                <RecipeCard key={recipe._id} {...recipe} />
+                            ))
+                        }
                     </div>
                 </div>
 

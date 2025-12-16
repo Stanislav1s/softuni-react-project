@@ -48,6 +48,11 @@ export default function Header() {
                                 </li> </>) :
                             (<>
                                 <li className="nav-item">
+                                    <Link className="nav-link" to="/create">
+                                        Create Recipe
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
                                     <Link className="nav-link" to="/favourites">
                                         Favourites
                                     </Link>

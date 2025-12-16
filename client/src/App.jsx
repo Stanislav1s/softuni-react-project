@@ -10,6 +10,7 @@ import Favourites from './components/favourites/Favourites.jsx'
 import Edit from './components/edit/edit.jsx'
 import Logout from './components/logout/Logout.jsx'
 import UserContext from './contexts/UserContext.jsx'
+import CreateRecipe from './components/CreateRecipe/createRecipe.jsx'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/logout' element={<Logout />} />
+        <Route path='/create' element={<CreateRecipe />} />
         <Route path='/:recipeId/details' element={<Details user={user} />} />
         <Route path='/favourites' element={<Favourites />} />
         <Route path='/:recipeId/edit' element={<Edit />} />
