@@ -15,7 +15,9 @@ const UserContext = createContext({
     logoutHandler() { },
 })
 
-export function UserProvider(props) {
+export function UserProvider({
+    children
+}) {
     const [user, setUser] = useState(null)
     const { request } = useRequest()
 
@@ -34,16 +36,16 @@ export function UserProvider(props) {
         const result = await request('/users/login', 'POST', { email, password })
         console.log(result);
 
-        setUser(user)
+        setUser(result)
     }
     const logoutHandler = () => {
-        return request('/users/logout')
+        return request('/users/logout', 'GET', null, { accessToken: user.accessToken })
             .finally(() => setUser(null))
 
     }
     const userContextValues = {
         user,
-        isAuthenticated: !!user?.accesToken,
+        isAuthenticated: !!user?.accessToken,
         registerHandler,
         loginHandler,
         logoutHandler
@@ -51,7 +53,7 @@ export function UserProvider(props) {
     return (
         <UserContext.Provider value={userContextValues}>
 
-            {props.children}
+            {children}
 
         </UserContext.Provider>
     )
