@@ -1,12 +1,16 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams, Link } from "react-router"
+import { useParams, Link, useNavigate } from "react-router"
 import UserContext from "../../contexts/UserContext.jsx";
+import useRequest from "../../hooks/useRequest.js";
 
 
 export default function Details() {
+    const { request } = useRequest()
+    const navigate = useNavigate()
     const { recipeId } = useParams()
     const [recipe, setRecipe] = useState([])
     const { user, isAuthenticated } = useContext(UserContext)
+
 
     useEffect(() => {
         fetch(`http://localhost:3030/jsonstore/recipes/${recipeId}`)
@@ -21,6 +25,18 @@ export default function Details() {
         import('bootstrap/dist/js/bootstrap.bundle.min.js')
     }, []);
 
+    const deleteHandler = async () => {
+        const confirmDelete = window.confirm("Are you sure you want to delete this recipe?");
+        if (!confirmDelete) return;
+
+        try {
+            await request(`/jsonstore/recipes/${recipe._id}`, "DELETE");
+            alert("Recipe deleted successfully");
+            navigate("/catalog");
+        } catch (err) {
+            alert(err.message);
+        }
+    };
 
     return (<>
         <>
@@ -70,9 +86,9 @@ export default function Details() {
                             <i className="bi bi-pencil-square"></i> Edit
                         </Link>
 
-                        <Link to={`/${recipeId}/delete`} className="btn btn-danger ms-3">
+                        <button className="btn btn-danger ms-3" onClick={deleteHandler}>
                             <i className="bi bi-trash"></i> Delete
-                        </Link>
+                        </button>
                     </>
                 )}
 

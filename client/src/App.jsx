@@ -11,6 +11,7 @@ import Edit from './components/edit/edit.jsx'
 import Logout from './components/logout/Logout.jsx'
 import UserContext from './contexts/UserContext.jsx'
 import CreateRecipe from './components/CreateRecipe/createRecipe.jsx'
+import AuthGuard from './components/authGuard/AuthGuard.jsx'
 
 
 function App() {
@@ -25,10 +26,10 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/logout' element={<Logout />} />
-        <Route path='/create' element={<CreateRecipe />} />
         <Route path='/:recipeId/details' element={<Details user={user} />} />
-        <Route path='/favourites' element={<Favourites />} />
-        <Route path='/:recipeId/edit' element={<Edit />} />
+        <Route path='/create' element={<AuthGuard><CreateRecipe /></AuthGuard>} />
+        <Route path='/favourites' element={<AuthGuard><Favourites /></AuthGuard>} />
+        <Route path='/:recipeId/edit' element={<AuthGuard><Edit /></AuthGuard>} />
       </Routes>
 
     </>

@@ -100,6 +100,7 @@ export default function CreateRecipe() {
                                         <div className="col-md-4 mb-4">
                                             <label className="form-label fw-semibold">Category</label>
                                             <select className="form-select" {...register('category')}>
+                                                <option value=''>Recipe category</option>
                                                 <option value='Breakfast'>Breakfast</option>
                                                 <option value='Lunch'>Lunch</option>
                                                 <option value='Dinner'>Dinner</option>
