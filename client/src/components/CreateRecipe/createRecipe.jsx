@@ -6,32 +6,45 @@ export default function CreateRecipe() {
     const navigate = useNavigate()
     const { request } = useRequest()
     const createRecipeHandler = async (values) => {
-        const data = { ...values };
+        try {
+            if (!values.title.trim()) throw new Error("Title is required");
+            if (!values.description1.trim()) throw new Error("Description is required");
+            if (!values.category) throw new Error("Category is required");
+            if (!values.ingredients.trim()) throw new Error("Ingredients are required");
+            if (!values.steps.trim()) throw new Error("Steps are required");
 
-        // created date
-        data.createdAt = new Date().toISOString();
+            if (Number(values.cooking_time) <= 0) throw new Error("Cooking time must be greater than 0");
+            if (Number(values.servings) <= 0) throw new Error("Servings must be greater than 0");
+            if (Number(values.calories) <= 0) throw new Error("Calories must be greater than 0");
 
-        // ingredients: string → array
-        data.ingredients = data.ingredients
-            .split('\n')
-            .map(i => i.trim())
-            .filter(Boolean);
+            const data = { ...values };
 
-        // steps: string → array of objects
-        data.step_by_step_guide = data.steps
-            .split('\n')
-            .map(step => step.trim())
-            .filter(Boolean)
-            .map((step, index) => ({
-                title: `Step ${index + 1}`,
-                description: step
-            }));
 
-        // remove raw steps field
-        delete data.steps;
-        await request('/jsonstore/recipes', 'POST', data)
+            data.createdAt = new Date().toISOString();
 
-        navigate('/catalog')
+
+            data.ingredients = data.ingredients
+                .split('\n')
+                .map(i => i.trim())
+                .filter(Boolean);
+
+            // steps: string → array of objects
+            data.step_by_step_guide = data.steps
+                .split('\n')
+                .map(step => step.trim())
+                .filter(Boolean)
+                .map((step, index) => ({
+                    title: `Step ${index + 1}`,
+                    description: step
+                }));
+
+            // remove raw steps field
+            delete data.steps;
+            await request('/jsonstore/recipes', 'POST', data)
+
+            navigate('/catalog')
+        }
+        catch (err) { alert(err.message) }
 
     }
     const {
