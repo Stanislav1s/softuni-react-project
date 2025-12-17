@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router"
+import UserContext from "../../contexts/UserContext.jsx";
 
 
 export default function Details() {
     const { recipeId } = useParams()
     const [recipe, setRecipe] = useState([])
+    const { user, isAuthenticated } = useContext(UserContext)
+
     useEffect(() => {
         fetch(`http://localhost:3030/jsonstore/recipes/${recipeId}`)
             .then(response => response.json())
             .then(result => setRecipe(result))
             .catch(err => alert(err.message))
-
-
-
     }, [recipeId]);
 
     useEffect(() => {
@@ -64,13 +64,17 @@ export default function Details() {
                     <i className="bi bi-heart"></i> Favourite
                 </Link>
 
-                <Link to={`/${recipeId}/edit`} className="btn btn-warning ms-3">
-                    <i className="bi bi-pencil-square"></i> Edit
-                </Link>
+                {isAuthenticated && recipe.ownerId === user._id && (
+                    <>
+                        <Link to={`/${recipeId}/edit`} className="btn btn-warning ms-3">
+                            <i className="bi bi-pencil-square"></i> Edit
+                        </Link>
 
-                <Link to={`/${recipeId}/delete`} className="btn btn-danger ms-3">
-                    <i className="bi bi-trash"></i> Delete
-                </Link>
+                        <Link to={`/${recipeId}/delete`} className="btn btn-danger ms-3">
+                            <i className="bi bi-trash"></i> Delete
+                        </Link>
+                    </>
+                )}
 
             </div>
             {/* CONTENT GRID */}

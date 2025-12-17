@@ -1,10 +1,15 @@
 import { useNavigate } from "react-router"
 import useRequest from "../../hooks/useRequest.js"
 import useForm from "../../hooks/useForm.js"
+import { useContext } from "react"
+import UserContext from "../../contexts/UserContext.jsx"
 
 export default function CreateRecipe() {
     const navigate = useNavigate()
     const { request } = useRequest()
+    const { user } = useContext(UserContext);
+
+    const ownerId = user._id;
     const createRecipeHandler = async (values) => {
         try {
             if (!values.title.trim()) throw new Error("Title is required");
@@ -19,7 +24,7 @@ export default function CreateRecipe() {
 
             const data = { ...values };
 
-
+            data.ownerId = ownerId
             data.createdAt = new Date().toISOString();
 
 
@@ -62,6 +67,7 @@ export default function CreateRecipe() {
         carbs: 0,
         fats: 0,
         category: '',
+        ownerId: '',
         steps: []
     })
     return (
