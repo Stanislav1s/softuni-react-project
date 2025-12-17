@@ -53,11 +53,6 @@ export default function Header() {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/favourites">
-                                        Favourites
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
                                     <Link className="nav-link" to="/logout">
                                         Logout
                                     </Link>

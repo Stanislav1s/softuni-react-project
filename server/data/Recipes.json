@@ -26,6 +26,7 @@
         "protein": 32,
         "carbs": 78,
         "fats": 22,
+        "likes": [],
         "step_by_step_guide": {
             "step1": {
                 "title": "Prepare ingredients",
@@ -81,6 +82,7 @@
         "protein": 38,
         "carbs": 28,
         "fats": 14,
+        "likes": [],
         "step_by_step_guide": {
             "step1": {
                 "title": "Make the sauce",
@@ -131,6 +133,7 @@
         "protein": 18,
         "carbs": 68,
         "fats": 22,
+        "likes": [],
         "step_by_step_guide": {
             "step1": {
                 "title": "Cook quinoa",
@@ -175,6 +178,7 @@
         "protein": 8,
         "carbs": 45,
         "fats": 12,
+        "likes": [],
         "step_by_step_guide": {
             "step1": {
                 "title": "Mix dry ingredients",
@@ -221,6 +225,7 @@
         "protein": 34,
         "carbs": 8,
         "fats": 36,
+        "likes": [],
         "step_by_step_guide": {
             "step1": {
                 "title": "Prepare salmon",
@@ -265,6 +270,7 @@
         "protein": 6,
         "carbs": 10,
         "fats": 18,
+        "likes": [],
         "step_by_step_guide": {
             "step1": {
                 "title": "Chop vegetables",
