@@ -33,7 +33,7 @@ export default function CreateRecipe() {
                 .map(i => i.trim())
                 .filter(Boolean);
 
-            // steps: string → array of objects
+
             data.step_by_step_guide = data.steps
                 .split('\n')
                 .map(step => step.trim())
@@ -43,7 +43,7 @@ export default function CreateRecipe() {
                     description: step
                 }));
 
-            // remove raw steps field
+
             delete data.steps;
             await request('/jsonstore/recipes', 'POST', data)
 

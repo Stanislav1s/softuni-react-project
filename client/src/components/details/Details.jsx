@@ -54,7 +54,7 @@ export default function Details() {
             : [...likes, userId];
 
         try {
-            // JSONStore requires PUT, not PATCH
+
             const response = await fetch(
                 `http://localhost:3030/jsonstore/recipes/${recipeId}`,
                 {
